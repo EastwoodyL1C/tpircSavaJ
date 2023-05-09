@@ -18,11 +18,14 @@ start.innerHTML = 'Start'
 //minigame img
 const imgPack = document.createElement('div')
 main.prepend(imgPack)
-imgPack.prepend(img5)
-imgPack.prepend(img4)
-imgPack.prepend(img3)
-imgPack.prepend(img2)
-imgPack.prepend(img1)
+// imgPack.prepend(img6)
+
+const row1 = [...arrNew]
+row1.sort(()=>Math.random() - 0.5)
+for (i=0; i<row1.length;i++){
+    imgPack.prepend(row1[i])
+}
+
 main.prepend(start)
 
 
