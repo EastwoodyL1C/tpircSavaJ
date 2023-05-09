@@ -18,15 +18,18 @@ start.innerHTML = 'Start'
 //minigame img
 const imgPack = document.createElement('div')
 main.prepend(imgPack)
-// imgPack.prepend(img6)
-
-const row1 = [...arrNew]
+const row1 = [...arrRow1]
 row1.sort(()=>Math.random() - 0.5)
 for (i=0; i<row1.length;i++){
     imgPack.prepend(row1[i])
 }
+const row2 = [...arrRow2]
+row2.sort(()=>Math.random() - 0.5)
+for (i=0; i<row2.length;i++){
+    imgPack.prepend(row2[i])
+}
 
-main.prepend(start)
+main.prepend(start)  //'Start button'
 
 
 ////////////////////footer set
