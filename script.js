@@ -21,6 +21,7 @@ start.onclick = function () {
 
 //minigame img
 const imgPack = document.createElement('div')
+imgPack.className = 'main__img-pack'
 main.prepend(imgPack)
 const row1 = [...arrBack]
 row1.sort(()=>Math.random() - 0.5)
