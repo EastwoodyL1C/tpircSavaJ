@@ -22,11 +22,15 @@ restart.innerHTML = 'Restart'
 //flip function
 start.onclick = function () {
     document.querySelector(".main__minigame-row1").style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: block'
-    document.querySelector(".main__minigame-row2").style.display = 'block'
+    document.querySelector(".main__minigame-row2").style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: block'
     setTimeout(function() {
         document.querySelector(".main__minigame-row1").style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(0)'
         document.querySelector(".main__minigame-row2").style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(0)'
     },7500)
+}
+//reset minigame
+restart.onclick = function () {
+    window.location.reload()
 }
 
 body.prepend(wrapper)
