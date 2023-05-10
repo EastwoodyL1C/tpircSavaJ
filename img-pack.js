@@ -1,13 +1,15 @@
 const arr = ['./img/1.jpg','./img/2.jpg','./img/3.jpg','./img/4.jpg','./img/5.jpg']
-const arrRow1 = arr.map(src=>{
+const arrBack = arr.map(src=>{
     const img = document.createElement('img')
+    img.className = "main__minigame-row2"
     img.src = src
-    img.style.cssText = 'width: 200px; height:270px;object-fit:cover; object-position: right;padding: 5px'
+    img.style.cssText = 'width: 200px; height:270px;object-fit:cover; object-position: right;padding: 5px; display: none'
     return img
 })
-const arrRow2 = arr.map(src=>{
+const arrFront = arr.map(src=>{
     const img = document.createElement('img')
+    img.className = "main__minigame-row1"
     img.src = src
-    img.style.cssText = 'width: 200px; height:270px;object-fit:cover; object-position: right;padding: 5px'
+    img.style.cssText = 'width: 200px; height:270px;object-fit:cover; object-position: right;padding: 5px; display: none'
     return img
 })

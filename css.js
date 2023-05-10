@@ -1,0 +1,1 @@
+start.style.cssText = 'display: flex; justify-content: center; padding: 7px 30px'

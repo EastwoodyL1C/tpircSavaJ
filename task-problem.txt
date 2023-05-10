@@ -1,0 +1,4 @@
+//script
+
+display block на все элементы
+Start - включает,н
