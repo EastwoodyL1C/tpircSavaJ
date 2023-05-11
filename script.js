@@ -21,11 +21,12 @@ restart.innerHTML = 'Restart'
 
 //flip function
 start.onclick = function () {
-    document.querySelector(".main__minigame-row1").style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: block'
-    document.querySelector(".main__minigame-row2").style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: block'
+    imgPack.style.cssText = 'display: flex; flex-direction: row'
+    arrBack.forEach(el => el.style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: block;')
+    arrFront.forEach(el => el.style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: block;')
     setTimeout(function() {
-        document.querySelector(".main__minigame-row1").style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(0)'
-        document.querySelector(".main__minigame-row2").style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(0)'
+        arrBack.forEach(el => el.style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(0);')
+        arrFront.forEach(el => el.style = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(0);')
     },7500)
 }
 //reset minigame
