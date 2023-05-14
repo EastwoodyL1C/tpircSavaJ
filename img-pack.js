@@ -6,15 +6,15 @@ const arrFront = arr.map(src=>{
     img.src = src
     for (let i=0; i<arr.length; i++) {
         if (src == './img/1.jpg') {
-            img.id = 'img1'
+            img.setAttribute('image', 'img1')
         }else if (src == './img/2.jpg') {
-            img.id = 'img2'
+            img.setAttribute('image', 'img2')
         }else if (src == './img/3.jpg') {
-            img.id = 'img3'
+            img.setAttribute('image', 'img3')
         }else if (src == './img/4.jpg') {
-            img.id = 'img4'
+            img.setAttribute('image', 'img4')
         }else if (src == './img/5.jpg') {
-            img.id = 'img5'
+            img.setAttribute('image', 'img5')
         }
     }
     img.style.cssText = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: none'
@@ -27,15 +27,15 @@ const arrBack = arr.map(src=>{
     img.src = src
     for (let i=0; i<arr.length; i++) {
         if (src == './img/1.jpg') {
-            img.id = 'img1'
+            img.setAttribute('image', 'img1')
         }else if (src == './img/2.jpg') {
-            img.id = 'img2'
+            img.setAttribute('image', 'img2')
         }else if (src == './img/3.jpg') {
-            img.id = 'img3'
+            img.setAttribute('image', 'img3')
         }else if (src == './img/4.jpg') {
-            img.id = 'img4'
+            img.setAttribute('image', 'img4')
         }else if (src == './img/5.jpg') {
-            img.id = 'img5'
+            img.setAttribute('image', 'img5')
         }
     }
     img.style.cssText = 'width: 200px; height:270px;object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: none'
