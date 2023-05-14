@@ -59,15 +59,12 @@ for (i=0; i<row2.length;i++){
 
 //choose and check
 //[
-// const check1 = addEventListener('click', (event1) => {
-//     const checkFront = document.querySelector('.main__minigame-row1')
-//     const checkFrontAtt = checkFront.getAttribute('image')
-// })
-const check2 = addEventListener('click', (event2) => {
-    const checkBack = document.querySelector('.main__minigame-row2')
-    const checkBackAtt = checkBack.getAttribute('image')
-    return console.log(checkBackAtt)
-})
+const checkFront = document.querySelector('.main__minigame-row1').addEventListener('click', choise1)
+    function choise1() {
+        img.style = imgStyleSelected
+        const tag1 = document.querySelector('[image]')
+        return tag1
+    }
 //]
 
 main.prepend(start)
