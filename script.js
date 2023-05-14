@@ -60,11 +60,14 @@ for (i=0; i<row2.length;i++){
 
 //choose and check
 //[
-const check = addEventListener('click', function() {
-    const checkFront = img.getAttribute(image)
-    const checkBack = img.getAttribute(image)
-    if (checkFront == checkBack) {
-        img.style = imgStyleSelected
+const check = addEventListener('click', (event) => {
+    const checkFront = document.querySelector('.main__minigame-row1')
+    const checkFrontAtt = checkFront.getAttribute('image')
+    const checkBack = document.querySelector('.main__minigame-row2')
+    const checkBackAtt = checkBack.getAttribute('image')
+    if (checkFrontAtt == checkBackAtt) {
+        arrFront.style = imgStyleSelected
+        arrBack.style = imgStyleSelected
     }
 })
 //]
