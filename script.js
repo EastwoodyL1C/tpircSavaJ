@@ -17,11 +17,11 @@ start.innerHTML = 'Start'
 
 //flip function
 start.onclick = function () {
-    arrBack.forEach(el => el.style = 'width: 18.5%; object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: block;')
-    arrFront.forEach(el => el.style = 'width: 18.5%; object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: block;')
+    arrBack.forEach(el => el.style = imgStyleVisible)
+    arrFront.forEach(el => el.style = imgStyleVisible)
     setTimeout(function() {
-        arrBack.forEach(el => el.style = 'width: 18.5%; object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(0); transition:0.4s all ease-in-out')
-        arrFront.forEach(el => el.style = 'width: 18.5%; object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(0); transition:0.4s all ease-in-out')
+        arrBack.forEach(el => el.style = imgStyleNotVisible)
+        arrFront.forEach(el => el.style = imgStyleNotVisible)
     },7500)
 
     //reset minigame
@@ -46,6 +46,7 @@ main.prepend(imgPack)
 imgPack.prepend(imgRow1)
 imgPack.prepend(imgRow2)
 
+//shuffle
 const row1 = [...arrBack]
 row1.sort(()=>Math.random() - 0.5)
 for (i=0; i<row1.length;i++){
@@ -56,6 +57,12 @@ row2.sort(()=>Math.random() - 0.5)
 for (i=0; i<row2.length;i++){
     imgRow2.prepend(row2[i])
 }
+
+//choose and check
+// const check = addEventListener('click', checkRow1, checkRow2)
+// const checkrow1 = function() {
+//     arrFront.
+// }
 
 main.prepend(start)
 wrapper.prepend(header)

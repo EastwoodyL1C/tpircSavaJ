@@ -6,3 +6,6 @@ start.style.cssText = 'max-width: 8%; padding: 7px 30px; background-color: trans
 imgPack.style.cssText = 'padding: 40px 0px 20px 0px; width: 90%; display: flex; justify-content: center; flex-direction: column'
 imgRow1.style.cssText = 'height: 25vh; display: flex; flex-direction: row; justify-content: center'
 imgRow2.style.cssText = 'height: 25vh; display: flex; flex-direction: row; justify-content: center'
+
+const imgStyleVisible = 'width: 18.5%; object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: block;'
+const imgStyleNotVisible = 'width: 18.5%; object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(0); transition:0.4s all ease-in-out'
