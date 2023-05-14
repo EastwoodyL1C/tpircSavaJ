@@ -1,7 +1,6 @@
 const body = document.querySelector('body')
 const wrapper = document.createElement('wrapper')
 
-
 ////////////////////header set
 const header = document.createElement('header')
 
@@ -60,15 +59,14 @@ for (i=0; i<row2.length;i++){
 
 //choose and check
 //[
-const check = addEventListener('click', (event) => {
-    const checkFront = document.querySelector('.main__minigame-row1')
-    const checkFrontAtt = checkFront.getAttribute('image')
+// const check1 = addEventListener('click', (event1) => {
+//     const checkFront = document.querySelector('.main__minigame-row1')
+//     const checkFrontAtt = checkFront.getAttribute('image')
+// })
+const check2 = addEventListener('click', (event2) => {
     const checkBack = document.querySelector('.main__minigame-row2')
     const checkBackAtt = checkBack.getAttribute('image')
-    if (checkFrontAtt == checkBackAtt) {
-        arrFront.style = imgStyleSelected
-        arrBack.style = imgStyleSelected
-    }
+    return console.log(checkBackAtt)
 })
 //]
 
