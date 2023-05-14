@@ -59,10 +59,15 @@ for (i=0; i<row2.length;i++){
 }
 
 //choose and check
-// const check = addEventListener('click', checkRow1, checkRow2)
-// const checkrow1 = function() {
-//     arrFront.
+// const check = addEventListener('click', checkRow1(), checkRow2())
+// const checkRow1 = function() {
+//     arrFront.style = imgStyleSelected
 // }
+// const checkRow2 = function() {
+//     arrBack.style = imgStyleSelected
+// }
+
+
 
 main.prepend(start)
 wrapper.prepend(header)
