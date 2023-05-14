@@ -21,7 +21,7 @@ start.onclick = function () {
     setTimeout(function() {
         arrBack.forEach(el => el.style = imgStyleNotVisible)
         arrFront.forEach(el => el.style = imgStyleNotVisible)
-    },7500)
+    },5000)
 
     //reset minigame
     start.onclick = function () {
