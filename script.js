@@ -59,6 +59,7 @@ for (i=0; i<row2.length;i++){
     imgRow2.prepend(row2[i])
 }
 
+//timeout
 //[check-front] =>
 const checkFront = document.querySelectorAll('.main__minigame-row1')
 checkFront.forEach( elFront => elFront.addEventListener('click', () => {
@@ -67,13 +68,13 @@ checkFront.forEach( elFront => elFront.addEventListener('click', () => {
 }))
 //[check-back] =>
 const checkBack = document.querySelectorAll('.main__minigame-row2')
+console.log(checkBack);
+
 checkBack.forEach( elBack => elBack.addEventListener('click', () => {
-    checkBack.img = document.querySelector(['image'])
+    console.log(elBack.getAttribute('image'))
     elBack.style = imgStyleSelected
-    return console.log(checkBack.img)
 }))
-console.log(checkFront);
-// if (elFront == elBack) {
+// if (elFront == dd) {
 //     img.style = imgStyleVisible
 //     img.style = imgStyleVisible
 // }
