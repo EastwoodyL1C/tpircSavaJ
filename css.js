@@ -12,3 +12,4 @@ imgRow2.style.cssText = 'height: 25vh; display: flex; flex-direction: row; justi
 const imgStyleVisible = 'width: 18.5%; object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; display: block; border: solid 5px transparent;'
 const imgStyleNotVisible = 'width: 18.5%; object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(0); transition:0.4s all ease-in-out; border: solid 5px transparent;'
 const imgStyleSelected = 'width: 18.5%; object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(0); transition:0.4s all ease-in-out; border: solid 5px red'
+const imgStylePassed = 'width: 18.5%; object-fit:cover; object-position: right; padding: 5px; border-radius: 10%; filter: brightness(1); transition:0.4s all ease-in-out; border: solid 5px green'

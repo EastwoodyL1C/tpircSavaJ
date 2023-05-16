@@ -22,7 +22,37 @@ start.onclick = function () {
         arrBack.forEach(el => el.style = imgStyleNotVisible)
         arrFront.forEach(el => el.style = imgStyleNotVisible)
         //choose and check
-        
+        //timeout
+        const state = {
+            valueFront: [],
+            valueBack: []
+        }
+        //[check-front] =>
+        const checkFront = document.querySelectorAll('.main__minigame-row1')
+        checkFront.forEach( elFront => elFront.addEventListener('click', () => {
+            for (let i = 0; i < 1; i++) {
+                state.valueFront.push(elFront.getAttribute('image'))
+            }
+            elFront.style = imgStyleSelected
+        }))
+        //[check-back] =>
+        const checkBack = document.querySelectorAll('.main__minigame-row2')
+        checkBack.forEach( elBack => elBack.addEventListener('click', () => {
+            for (let i = 0; i < 1; i++) {
+                state.valueBack.push(elBack.getAttribute('image'))
+            }
+            elBack.style = imgStyleSelected
+        }))
+        console.log(state)
+        for (let k in state) {
+            if (state.valueFront[k] == state.valueBack[k]) {
+                state.valueFront[k] = imgStylePassed
+                state.valueBack[k] = imgStylePassed
+                console.log('true')
+            }else {
+                console.log('false');
+            }
+        }
     },5000)
 
     //reset minigame
@@ -58,27 +88,6 @@ row2.sort(()=>Math.random() - 0.5)
 for (i=0; i<row2.length;i++){
     imgRow2.prepend(row2[i])
 }
-
-//timeout
-//[check-front] =>
-const checkFront = document.querySelectorAll('.main__minigame-row1')
-checkFront.forEach( elFront => elFront.addEventListener('click', () => {
-    elFront.style = imgStyleSelected
-    return elFront
-}))
-//[check-back] =>
-const checkBack = document.querySelectorAll('.main__minigame-row2')
-console.log(checkBack);
-
-checkBack.forEach( elBack => elBack.addEventListener('click', () => {
-    console.log(elBack.getAttribute('image'))
-    elBack.style = imgStyleSelected
-}))
-// if (elFront == dd) {
-//     img.style = imgStyleVisible
-//     img.style = imgStyleVisible
-// }
-//
 
 main.prepend(start)
 wrapper.prepend(header)
