@@ -21,6 +21,20 @@ start.onclick = function () {
     setTimeout(function() {
         arrBack.forEach(el => el.style = imgStyleNotVisible)
         arrFront.forEach(el => el.style = imgStyleNotVisible)
+        //choose and check
+        //[check-front] =>
+        const checkFront = document.querySelectorAll('.main__minigame-row1')
+        checkFront.forEach( el => el.addEventListener('click', () => {
+            el.style = imgStyleSelected
+            return el
+        }))
+        //[check-back] =>
+        const checkBack = document.querySelectorAll('.main__minigame-row2')
+        checkBack.forEach( el => el.addEventListener('click', () => {
+            el.style = imgStyleSelected
+            return el
+        }))
+        //
     },5000)
 
     //reset minigame
@@ -56,16 +70,6 @@ row2.sort(()=>Math.random() - 0.5)
 for (i=0; i<row2.length;i++){
     imgRow2.prepend(row2[i])
 }
-
-//choose and check
-//[
-const checkFront = document.querySelector('.main__minigame-row1').addEventListener('click', choise1)
-    function choise1() {
-        img.style = imgStyleSelected
-        const tag1 = document.querySelector('[image]')
-        return tag1
-    }
-//]
 
 main.prepend(start)
 wrapper.prepend(header)
