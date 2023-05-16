@@ -22,19 +22,7 @@ start.onclick = function () {
         arrBack.forEach(el => el.style = imgStyleNotVisible)
         arrFront.forEach(el => el.style = imgStyleNotVisible)
         //choose and check
-        //[check-front] =>
-        const checkFront = document.querySelectorAll('.main__minigame-row1')
-        checkFront.forEach( el => el.addEventListener('click', () => {
-            el.style = imgStyleSelected
-            return el
-        }))
-        //[check-back] =>
-        const checkBack = document.querySelectorAll('.main__minigame-row2')
-        checkBack.forEach( el => el.addEventListener('click', () => {
-            el.style = imgStyleSelected
-            return el
-        }))
-        //
+        
     },5000)
 
     //reset minigame
@@ -70,6 +58,26 @@ row2.sort(()=>Math.random() - 0.5)
 for (i=0; i<row2.length;i++){
     imgRow2.prepend(row2[i])
 }
+
+//[check-front] =>
+const checkFront = document.querySelectorAll('.main__minigame-row1')
+checkFront.forEach( elFront => elFront.addEventListener('click', () => {
+    elFront.style = imgStyleSelected
+    return elFront
+}))
+//[check-back] =>
+const checkBack = document.querySelectorAll('.main__minigame-row2')
+checkBack.forEach( elBack => elBack.addEventListener('click', () => {
+    checkBack.img = document.querySelector(['image'])
+    elBack.style = imgStyleSelected
+    return console.log(checkBack.img)
+}))
+console.log(checkFront);
+// if (elFront == elBack) {
+//     img.style = imgStyleVisible
+//     img.style = imgStyleVisible
+// }
+//
 
 main.prepend(start)
 wrapper.prepend(header)
