@@ -27,24 +27,27 @@ start.onclick = function () {
             valueFront: [],
             valueBack: []
         }
-        //[check-front] =>
-        const checkFront = document.querySelectorAll('.main__minigame-row1')
-        checkFront.forEach( elFront => elFront.addEventListener('click', () => {
-            for (let i = 0; i < 1; i++) {
-                for (let el in state.valueFront) delete state.valueFront[el]
-                state.valueFront.push(elFront.getAttribute('image'))
-                elFront.style = imgStyleSelected
-            }
-        }))
-        //[check-back] =>
-        const checkBack = document.querySelectorAll('.main__minigame-row2')
-        checkBack.forEach( elBack => elBack.addEventListener('click', () => {
-            for (let i = 0; i < 1; i++) {
-                for (let el in state.valueBack) delete state.valueBack[el]
-                state.valueBack.push(elBack.getAttribute('image'))
-                elBack.style = imgStyleSelected
-            }
-        }))
+        const mainCheck = function () {
+            //[check-front] =>
+            const checkFront = document.querySelectorAll('.main__minigame-row1')
+            checkFront.forEach( elFront => elFront.addEventListener('click', () => {
+                for (let i = 0; i < 1; i++) {
+                    for (let el in state.valueFront) delete state.valueFront[el]
+                    state.valueFront.push(elFront.getAttribute('image'))
+                    elFront.style = imgStyleSelected
+                }
+            }))
+            //[check-back] =>
+            const checkBack = document.querySelectorAll('.main__minigame-row2')
+            checkBack.forEach( elBack => elBack.addEventListener('click', () => {
+                for (let i = 0; i < 1; i++) {
+                    for (let el in state.valueBack) delete state.valueBack[el]
+                    state.valueBack.push(elBack.getAttribute('image'))
+                    elBack.style = imgStyleSelected
+                }
+            }))
+        }
+        
 
         //функцию)
         console.log(state)
