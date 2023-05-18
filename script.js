@@ -14,6 +14,40 @@ const footer = document.createElement('footer')
 const start = document.createElement('button')
 start.innerHTML = 'Start'
 
+const state = {
+    value: null,
+    elementVal: null
+}
+const done = []
+
+const gameOver = () => {
+    console.log('gameOver')
+}
+
+const check = (element) => {
+    if(state.value) {
+        const choose2 = element.getAttribute('image')
+        if (state.value === choose2) {
+            element.style.cssText = imgStylePassed
+            done.push(choose2)
+            if (done.length === arr.length) {
+                gameOver()
+            }
+        }else {
+            element.style.cssText = imgStyleNotVisible
+            state.elementVal.style.cssText = imgStyleNotVisible
+        }
+        state.value= null
+        state.elementVal = null
+    }else {
+        const checkCurrent = element.getAttribute('image')
+        state.elementVal = element
+        state.value = checkCurrent
+        element.style.cssText = imgStylePassed
+    }
+
+}
+
 //flip function
 start.onclick = function () {
     arrBack.forEach(el => el.style = imgStyleVisible)
@@ -22,39 +56,13 @@ start.onclick = function () {
         arrBack.forEach(el => el.style = imgStyleNotVisible)
         arrFront.forEach(el => el.style = imgStyleNotVisible)
         //choose and check
-        const state = {
-            valueFront: [],
-            valueBack: []
-        }
         //[check-front] =>
         const checkFront = document.querySelectorAll('.main__minigame-row1')
-        checkFront.forEach( elFront => elFront.addEventListener('click', () => {
-            for (let i = 0; i < 1; i++) {
-                for (let el in state.valueFront) delete state.valueFront[el]
-                state.valueFront.push(elFront.getAttribute('image'))
-                elFront.style = imgStyleSelected
-            }
-        }))
+        checkFront.forEach( elFront => elFront.addEventListener('click', check.bind(this, elFront)))
         //[check-back] =>
         const checkBack = document.querySelectorAll('.main__minigame-row2')
-        checkBack.forEach( elBack => elBack.addEventListener('click', () => {
-            for (let i = 0; i < 1; i++) {
-                for (let el in state.valueBack) delete state.valueBack[el]
-                state.valueBack.push(elBack.getAttribute('image'))
-                elBack.style = imgStyleSelected
-            }
-        }))
-        console.log(state)
-        for (let k in state) {
-            if (state.valueFront[k] == state.valueBack[k]) {
-                state.valueFront.style = imgStylePassed
-                state.valueBack.style = imgStylePassed
-                console.log('true')
-            }else {
-                console.log('false');
-            }
-        }
-    },5000)
+        checkBack.forEach( elBack => elBack.addEventListener('click', check.bind(this, elBack)))
+    },2000)
     //reset minigame
     start.onclick = function () {
         window.location.reload()
