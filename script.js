@@ -14,38 +14,52 @@ const footer = document.createElement('footer')
 const start = document.createElement('button')
 start.innerHTML = 'Start'
 
+//default image state
 const state = {
     value: null,
-    elementVal: null
+    newValue: null
 }
+
+//restart-reload
+const restart = function () {
+    window.location.reload()
+}
+
+//game-over check
 const done = []
-
 const gameOver = () => {
-    console.log('gameOver')
+    alert('\n🎉 Congratulations 🎉\n\n\nThank you for playing\n')
+    arrBack.forEach(el => el.style = imgStyleNotVisible)
+    arrFront.forEach(el => el.style = imgStyleNotVisible)
+    restart ()
 }
 
+//image check
 const check = (element) => {
     if(state.value) {
-        const choose2 = element.getAttribute('image')
-        if (state.value === choose2) {
+        const choosenImg = element.getAttribute('image')
+        //selected check - Passed
+        if (state.value === choosenImg) {
             element.style.cssText = imgStylePassed
-            done.push(choose2)
+            done.push(choosenImg)
+            //all pictures are opened
             if (done.length === arr.length) {
                 gameOver()
             }
+        //selected check - Failed
         }else {
             element.style.cssText = imgStyleNotVisible
-            state.elementVal.style.cssText = imgStyleNotVisible
+            state.newValue.style.cssText = imgStyleNotVisible
         }
         state.value= null
-        state.elementVal = null
+        state.newValue = null
+    //pick second picture
     }else {
         const checkCurrent = element.getAttribute('image')
-        state.elementVal = element
+        state.newValue = element
         state.value = checkCurrent
         element.style.cssText = imgStylePassed
     }
-
 }
 
 //flip function
@@ -55,7 +69,7 @@ start.onclick = function () {
     setTimeout(function() {
         arrBack.forEach(el => el.style = imgStyleNotVisible)
         arrFront.forEach(el => el.style = imgStyleNotVisible)
-        //choose and check
+        //choosing
         //[check-front] =>
         const checkFront = document.querySelectorAll('.main__minigame-row1')
         checkFront.forEach( elFront => elFront.addEventListener('click', check.bind(this, elFront)))
@@ -64,9 +78,7 @@ start.onclick = function () {
         checkBack.forEach( elBack => elBack.addEventListener('click', check.bind(this, elBack)))
     },2000)
     //reset minigame
-    start.onclick = function () {
-        window.location.reload()
-    }
+    start.onclick = restart
 }
 
 body.prepend(wrapper)
