@@ -14,6 +14,9 @@ const footer = document.createElement('footer')
 const start = document.createElement('button')
 start.innerHTML = 'Start'
 
+const description = document.createElement('p')
+description.innerHTML = 'The game starts with all the cards face down and players take turns to turn over two cards. If the two cards have the same picture, then they keep the cards, otherwise they turn the cards face down again.'
+
 //default image state
 const state = {
     value: null,
@@ -62,10 +65,14 @@ const check = (element) => {
     }
 }
 
+
 //flip function
 start.onclick = function () {
     arrBack.forEach(el => el.style = imgStyleVisible)
+    imgRow1.style.cssText = imgRowVisible
+    imgRow2.style.cssText = imgRowVisible
     arrFront.forEach(el => el.style = imgStyleVisible)
+    description.style.cssText = 'display: none'
     setTimeout(function() {
         arrBack.forEach(el => el.style = imgStyleNotVisible)
         arrFront.forEach(el => el.style = imgStyleNotVisible)
@@ -109,5 +116,6 @@ for (i=0; i<row2.length;i++){
     imgRow2.prepend(row2[i])
 }
 
+main.prepend(description)
 main.prepend(start)
 wrapper.prepend(header)
